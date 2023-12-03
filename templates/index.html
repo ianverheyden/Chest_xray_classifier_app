@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chest X-Ray Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            text-align: center; /* Centering the content */
+        }
+    
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden; /* Clearfix */
+        }
+    
+        h1, h2 {
+            color: #333;
+        }
+    
+        form {
+            margin-bottom: 20px;
+        }
+    
+        img {
+            width: 100px; /* Or any other size */
+            height: auto;
+            margin: 10px;
+            border: 1px solid #ddd; /* Light grey border */
+            border-radius: 4px; /* Rounded corners */
+            padding: 5px;
+        }
+    
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+    
+        input[type="submit"], button {
+            border: none;
+            padding: 10px 20px;
+            background-color: #5cb85c; /* Bootstrap 'success' green */
+            color: white;
+            cursor: pointer;
+        }
+    
+        input[type="submit"]:hover, button:hover {
+            background-color: #449d44; /* A darker green */
+        }
+    </style>
+</head>
+<body>
+    <h1>Chest X-Ray Diagnostic Tool</h1>
+
+    <div>
+        <h2>Upload Your Chest X-Ray</h2>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <input type="file" name="file">
+            <input type="submit" value="Upload and Analyze">
+        </form>
+    </div>
+
+    <div>
+        <h2>Or Choose from Test Images</h2>
+        {% for image in displayed_images %}
+            <form action="/predict" method="post">
+                <button type="submit" name="image_name" value="{{ image }}">
+                    <img src="{{ url_for('static', filename='test_images/' + image) }}" alt="{{ image }}">
+                </button>
+            </form>
+        {% endfor %}
+    </div>
+
+    <!-- Add JavaScript for dynamic content updates (optional) -->
+</body>
+</html>

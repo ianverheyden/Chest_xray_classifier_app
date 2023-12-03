@@ -1,4 +1,4 @@
-# Chest X-Ray Diagnosis "Double Check"  
+# Chest X-Ray Diagnosis "Double Check" Web App
 
 ## Description
 The idea was to build a transfer learning, convolutional neural network model that can take in chest x-ray images and make a prediction regarding the patient's disease state/lack thereof. 

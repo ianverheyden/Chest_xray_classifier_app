@@ -18,4 +18,10 @@ Doctors could use it as a double check when assessing x-rays. Radiology students
 ![GITHUB BADGE](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 
 
+- HTML, CSS and Javascript for structure, styling, and interactivity
+- Python and TensorFlow framework to train machine learning model on the [National Institue of Health's Chest X-Ray dataset](https://www.nih.gov/news-events/news-releases/nih-clinical-center-provides-one-largest-publicly-available-chest-x-ray-datasets-scientific-community)
+- Transfer learning leveraged from MobileNet CNN architecture model for image classification. 
+- Flask to deploy the model, hosted on Heroku
 
+## Optimizations
+Next steps include further filtering of orginal dataset to purify training pools. Seperate models will be developped gender and 

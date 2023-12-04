@@ -24,4 +24,8 @@ Doctors could use it as a double check when assessing x-rays. Radiology students
 - Flask to deploy the model, hosted on Heroku
 
 ## Optimizations
-Next steps include further filtering of orginal dataset to purify training pools. Seperate models will be developped gender and 
+Next steps include:
+ - further filtering of orginal dataset to purify training pools. Seperate models will be developped for gender and X-Ray orientations.
+ - Multi class classification for multiple disease labels present in the dataset.
+ - Multi-label, multi-class classification model.
+ - Experimentation with SVM classification layer as per

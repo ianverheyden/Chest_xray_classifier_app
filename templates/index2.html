@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chest X-Ray Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet"> <!-- Google Font -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+<body>
+    <h1>Chest X-Ray Diagnostic Tool</h1>
+
+    <div class="xray-lightbox">
+        <!-- Dynamically display x-ray images here -->
+        {% for image in displayed_images %}
+            <img src="{{ url_for('static', filename='test_images/' + image) }}" alt="X-Ray Image" class="xray-image" onclick="predict(this.src)">
+        {% endfor %}
+    </div>
+    <button id="refresh-button" onclick="refreshImages()">Refresh Images</button>
+    <div class="upload-section">
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <input type="file" name="file">
+            <input type="submit" value="Upload and Analyze">
+        </form>
+    </div>
+</body>
+</html>
